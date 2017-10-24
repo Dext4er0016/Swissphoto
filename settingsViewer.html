@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Swissphoto</title>
+    <meta name="description" content="This website is made to demonstrate how beautiful the nature is">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <link rel="author" href="Nico Schmid"/>
+
+    <!-- Prallax Scrolling -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script type="text/javascript" src="js/exif.js"></script>
+    <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+
+
+    <!-- Bootstrap -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+
+</head>
+<body>
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<![endif]-->
+
+<main>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/swissPhotoBrand" width="30" height="30" class="d-inline-block align-top" alt="">
+            Swissphoto
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="settingsViewer.html">Settingsviewer<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="doc.html">Documentation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid settingsViewer">
+        <div class="row">
+            <div class="col-md-auto">
+                <img id="cameraImage" src="img/cameraImage.png" class="rounded float-left cameraImage" alt="Camera Image">
+            </div>
+            <div class="col">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-auto">
+                        <label class="custom-file fileupload">
+                            <input accept="image/*" type="file" id="upload" class="custom-file-input" onchange="readURLforExif(this)">
+                            <span class="custom-file-control">Choose file...</span>
+                        </label>
+                        <label class="btn btn-primary fileuploadBtn">
+                            Browse <input type="button" onclick="getExif()" hidden>
+                        </label>
+                        <img id="hiddenImage" style="display: none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <pre>Make and model: <span id="makeAndModel"></span></div>
+    </div>
+</main>
+
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/skrollr.js"></script>
+<script src="js/_main.js"></script>
+
+</body>
+</html>
