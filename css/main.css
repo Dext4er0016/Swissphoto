@@ -361,3 +361,7 @@ main {
 .fileuploadWrapper{
     position: fixed; /* or absolute */
 }
+
+.card.exifCard{
+    margin-top:30px;
+}

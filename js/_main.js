@@ -32,10 +32,51 @@ function getExif() {
     EXIF.getData(img1, function() {
         var make = EXIF.getTag(this, "Make");
         var model = EXIF.getTag(this, "Model");
-        var dateTime = EXIF.getTag(this, "Flash");
-        var makeAndModel = document.getElementById("makeAndModel");
-        makeAndModel.innerHTML = `${make} ${model}`;
-        alert(`${make} ${dateTime}`);
+        var exposure = EXIF.getTag(this, "ExposureTime");
+        var fNumber = EXIF.getTag(this, "FNumber");
+        var isoSpeed = EXIF.getTag(this, "ISOSpeedRatings");
+        var flash = EXIF.getTag(this, "Flash");
+        var description = EXIF.getTag(this, "ImageDescription");
+        var orientation = EXIF.getTag(this, "Orientation");
+        var software = EXIF.getTag(this, "Software");
+        var date = EXIF.getTag(this, "DateTimeOriginal");
+        var imageWidth = EXIF.getTag(this, "ImageWidth");
+        var imageHeight = EXIF.getTag(this, "ImageHeight");
+        var compression = EXIF.getTag(this, "Compression");
+
+
+        var makeElement = document.getElementById("make");
+        var modelElement = document.getElementById("model");
+        var exposureElement = document.getElementById("exposure");
+        var fNumberElement = document.getElementById("fNumber");
+        var isoSpeedElement = document.getElementById("isoSpeed");
+        var flashElement = document.getElementById("flash");
+        var descriptionElement = document.getElementById("description");
+        var orientationElement = document.getElementById("orientation");
+        var softwareElement = document.getElementById("software");
+        var dateElement = document.getElementById("date");
+        var imageWidthElement = document.getElementById("imageWidth");
+        var imageHeightElement = document.getElementById("imageHeight");
+        var compressionElement = document.getElementById("compression");
+
+        if (!description.replace(/\s/g, '').length) {
+            description="-";
+        }
+
+        makeElement.innerHTML = make;
+        modelElement.innerHTML = model;
+        exposureElement.innerHTML = exposure;
+        fNumberElement.innerHTML = fNumber;
+        isoSpeedElement.innerHTML = isoSpeed;
+        flashElement.innerHTML = flash;
+        descriptionElement.innerHTML = description;
+        orientationElement.innerHTML = orientation;
+        softwareElement.innerHTML = software;
+        dateElement.innerHTML = date;
+        imageWidthElement.innerHTML = imageWidth;
+        imageHeightElement.innerHTML = imageHeight;
+        compressionElement.innerHTML = compression;
+
     });
 }
 
