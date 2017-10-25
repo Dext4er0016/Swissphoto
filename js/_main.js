@@ -39,6 +39,7 @@ function getExif() {
     });
 }
 
+
 function uploadPicForExif(){
     $('#upload').click();
 }
