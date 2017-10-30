@@ -113,6 +113,7 @@ function handleImage(e) {
     reader.onload = function (event) {
         var img = document.getElementById('hiddenImage');
         $('.uploader img').attr('src',event.target.result);
+        $('.cameraImage').attr('src',event.target.result);
     }
     reader.readAsDataURL(e.target.files[0]);
 }

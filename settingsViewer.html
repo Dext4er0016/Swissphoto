@@ -68,15 +68,17 @@
     <div class="container-fluid settingsViewer">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <img id="cameraImage" src="img/cameraImage.png" class="rounded float-left cameraImage"
-                     alt="Camera Image">
+                <!-- <img id="cameraImage" src="img/cameraImage.png" class="rounded float-left cameraImage"
+                     alt="Camera Image"> -->
+                <img src="img/cameraImage.png" alt="CameraImage" class="img-thumbnail cameraImage">
             </div>
             <div class="col-md-8 ">
 
                 <div class="uploader" onclick="$('#filePhoto').click()">
-                    click here or drag here your images for preview and set userprofile_picture data
+                    <span class="ddText"> <h3>Drop image files here <br/></h3>
                     <img id="hiddenImage" src=""/>
-                    <input type="file" name="userprofile_picture"  id="filePhoto" />
+                        <span style="color: #007bff;">or select</span></span>
+                    <input type="file" name="userprofile_picture" id="filePhoto" />
                 </div>
 
 
