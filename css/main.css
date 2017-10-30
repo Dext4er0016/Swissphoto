@@ -346,15 +346,18 @@ main {
 
 .cameraImage{
     margin-left: 20px;
+    margin-top: 50px;
 }
 
 .custom-file.fileupload{
     margin-top:50px;
 }
 .btn.btn-primary.fileuploadBtn{
-    margin-bottom: -7px;
-    margin-left: -6px;
+    margin-left: 20px;
+    width:600px;
+    cursor: pointer;
     text-align: center;
+    margin-top:10px;
 }
 
 .fileuploadWrapper{
