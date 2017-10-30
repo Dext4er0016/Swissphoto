@@ -24,10 +24,8 @@
 	}
 } )( jQuery );
 
-window.onload=getExif;
 
 function getExif() {
-	alert("Start EXIF")
     var img1 = document.getElementById("hiddenImage");
     EXIF.getData(img1, function() {
         var make = EXIF.getTag(this, "Make");
@@ -44,7 +42,6 @@ function getExif() {
         var imageHeight = EXIF.getTag(this, "ImageHeight");
         var compression = EXIF.getTag(this, "Compression");
 
-
         var makeElement = document.getElementById("make");
         var modelElement = document.getElementById("model");
         var exposureElement = document.getElementById("exposure");
@@ -58,6 +55,11 @@ function getExif() {
         var imageWidthElement = document.getElementById("imageWidth");
         var imageHeightElement = document.getElementById("imageHeight");
         var compressionElement = document.getElementById("compression");
+        var card = document.getElementById("exifCard1");
+        var card2 = document.getElementById("exifCard2");
+
+        card.style.display = "flex";
+        card2.style.display = "flex";
 
         if (!description.replace(/\s/g, '').length) {
             description="-";
@@ -98,4 +100,19 @@ function readURLforExif(input)
     reader.readAsDataURL(input.files[0]);
     getExif()
 
+}
+
+
+
+
+var imageLoader = document.getElementById('filePhoto');
+imageLoader.addEventListener('change', handleImage, false);
+
+function handleImage(e) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        var img = document.getElementById('hiddenImage');
+        $('.uploader img').attr('src',event.target.result);
+    }
+    reader.readAsDataURL(e.target.files[0]);
 }

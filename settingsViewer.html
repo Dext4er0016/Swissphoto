@@ -1,13 +1,17 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <title>Swissphoto</title>
     <meta name="description" content="This website is made to demonstrate how beautiful the nature is">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
     <link rel="author" href="Nico Schmid"/>
 
@@ -31,7 +35,9 @@
 </head>
 <body>
 <!--[if lt IE 7]>
-<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
 <![endif]-->
 
 <main>
@@ -41,7 +47,8 @@
             <img src="img/swissPhotoBrand" width="30" height="30" class="d-inline-block align-top" alt="">
             Swissphoto
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -59,28 +66,34 @@
         </div>
     </nav>
     <div class="container-fluid settingsViewer">
-        <div class="row">
-            <div class="col-md-auto">
-                <img id="cameraImage" src="img/cameraImage.png" class="rounded float-left cameraImage" alt="Camera Image">
+        <div class="row align-items-center">
+            <div class="col-md-4">
+                <img id="cameraImage" src="img/cameraImage.png" class="rounded float-left cameraImage"
+                     alt="Camera Image">
             </div>
-            <div class="col">
-                <div class="row justify-content-md-center">
-                    <div class="col-md-auto">
-                        <label class="custom-file fileupload">
-                            <input accept="image/*" type="file" id="upload" class="custom-file-input" onchange="readURLforExif(this)">
-                            <span class="custom-file-control">Choose file...</span>
-                        </label>
-                        <label class="btn btn-primary fileuploadBtn">
-                            Browse <input type="button" onclick="getExif()" hidden>
-                        </label>
-                        <img id="hiddenImage" style="display: none">
-                    </div>
+            <div class="col-md-8 ">
+
+                <div class="uploader" onclick="$('#filePhoto').click()">
+                    click here or drag here your images for preview and set userprofile_picture data
+                    <img id="hiddenImage" src=""/>
+                    <input type="file" name="userprofile_picture"  id="filePhoto" />
                 </div>
+
+
+                <label class="custom-file fileupload">
+                    <input accept="image/*" type="file" id="upload" class="custom-file-input"
+                           onchange="readURLforExif(this)">
+                    <span class="custom-file-control">Choose file...</span>
+                </label>
+                <label class="btn btn-primary fileuploadBtn">
+                    Browse <input type="button" onclick="getExif()" hidden>
+                </label>
+                <img id="change" src="">
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <div class="card">
+        <div class="container-fluid">
+            <row>
+                <div id="exifCard1" class="card exifCard">
                     <h4 class="card-header">Kamera</h4>
                     <div class="card-body">
                         <table class="table">
@@ -119,10 +132,10 @@
                         </table>
                     </div>
                 </div>
-
-                <div class="card exifCard">
-                    <h4 class="card-header">EXIF</h4>
+                <div id="exifCard2" class="card exifCard" style="margin-top: 30px">
+                    <h4 class="card-header">Exif</h4>
                     <div class="card-body">
+                        <p class="card-text">
                         <table class="table">
                             <thead>
                             <tr>
@@ -161,14 +174,11 @@
                             </tr>
                             </tbody>
                         </table>
+                        </p>
                     </div>
                 </div>
-            </div>
+            </row>
         </div>
-    </div>
-    <div class="container-fluid">
-        <pre>Make and model: <span id="makeAndModel"></span></div>
-    </div>
 </main>
 
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
