@@ -1,173 +1,286 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <title>Swissphoto</title>
-        <meta name="description" content="This website is made to demonstrate how beautiful the nature is">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Swissphoto</title>
+    <meta name="description" content="This website is made to demonstrate how beautiful the nature is">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
 
-		<link rel="author" href="Nico Schmid"/>
+    <link rel="author" href="Nico Schmid"/>
 
-		<!-- Prallax Scrolling -->
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/main.css">
-        <script src="js/vendor/modernizr-2.7.1.min.js"></script>
-        <style type="text/css">
-			body {
-				font-family: 'Open Sans', sans-serif;
-			}
-		</style>
+    <!-- Prallax Scrolling -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="loading">
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
+<![endif]-->
+
+<div id="preload">
+    <img src="img/bcg_slide-1.jpg">
+    <img src="img/bcg_slide-2.jpg">
+    <img src="img/bcg_slide-3.jpg">
+    <img src="img/bcg_slide-4.jpg">
+</div>
+
+<main>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="img/swissPhotoBrand" width="30" height="30" class="d-inline-block align-top" alt="">
+            Swissphoto
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="settingsViewer.html">Settingsviewer</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="doc.html">Documentation</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="row">
+        <div class="col">
+            <img id="hiddenImage" src="" style="display: none;"/>
+            <section id="welcomeSlide" class="homeSlide">
+                <div class="bcg"
+                     data-center="background-position: 50% 0px;"
+                     data-top-bottom="background-position: 50% -1200px;"
+                     data-anchor-target="#welcomeSlide">
+                </div>
+            </section>
+
+            <section id="slide-1" class="homeSlide">
+                <div class="bcg"
+                     data-center="background-position: 50% 0px;"
+                     data-top-bottom="background-position: 50% -100px;"
+                     data-anchor-target="#slide-1">
+                    <div class="hsContainer">
+                        <div class="hsContent" data-center="bottom: 200px; opacity: 1"
+                             data-top="bottom: 1200px; opacity: 0" data-anchor-target="#slide-1 h2">
+                            <h2 style="text-align: center">"The earth has music
+                                for those whose listen"
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-2" class="homeSlide">
+                <div class="bcg"
+                     data-center="background-position: 50% 10px;"
+                     data-top-bottom="background-position: 50% -100px;"
+                     data-bottom-top="background-position: 50% 100px;"
+                     data-anchor-target="#slide-2"
+                >
+                    <div class="hsContainer">
+                        <div class="hsContent"
+                             data-center="opacity: 1"
+                             data-center-top="opacity: 0"
+                             data--100-bottom="opacity: 0;"
+                             data-anchor-target="#slide-2"
+                        >
+                            <h2 style="text-align: center">"Education is not the filling of a pail,
+                                but the lighting of a fire"
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="slide-3" class="homeSlide">
+                <div class="bcg"
+                     data-center="background-position: 50% 0px;"
+                     data-top-bottom="background-position: 50% -100px;"
+                     data-bottom-top="background-position: 50% 100px;"
+                     data-anchor-target="#slide-3"
+                >
+                    <div class="hsContainer">
+                        <div class="hsContent"
+                             data--50-bottom="opacity: 0;"
+                             data--200-bottom="opacity: 1;"
+                             data-center="opacity: 1"
+                             data-200-top="opacity: 0"
+                             data-anchor-target="#slide-3 h2"
+                        >
+                            <h2 style="text-align: center">"Lightning makes no
+                                sound until it strikes"
+                            </h2>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section id="slide-4" class="homeSlide">
+                <div class="bcg"
+                     id="slide4Div"
+                     data-center="background-position: 50% 0px;"
+                     data-top-bottom="background-position: 50% -100px;"
+                     data-bottom-top="background-position: 50% 100px;"
+                     data-anchor-target="#slide-4"
+                     onclick="showExifHome(this.id, 'hiddenImage')"
+                >
+                    <div class="hsContainer">
+                        <div class="hsContent"
+                             data-bottom-top="opacity: 0"
+                             data-25p-top="opacity: 0"
+                             data-top="opacity: 1"
+                             data-anchor-target="#slide-4"
+                        >
+                            <h2 style="text-align: center">
+                                "You will always find an answer
+                                in the sound of water"
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- Large modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
+
+    <div class="modal bd-example-modal-lg" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="exifCardMain1" class="card exifCardMain">
+                        <h4 class="card-header">Kamera</h4>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Einstellung</th>
+                                    <th scope="col">Wert</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Marke</td>
+                                    <td><span id="makeMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Model</td>
+                                    <td><span id="modelMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Verschlusszeit</td>
+                                    <td><span id="exposureMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Belichtung</td>
+                                    <td><span id="fNumberMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>ISO</td>
+                                    <td><span id="isoSpeedMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Blitz</td>
+                                    <td><span id="flashMain"></span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="exifCardMain2" class="card exifCardMain" style="margin-top: 30px">
+                        <h4 class="card-header">Exif</h4>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Einstellung</th>
+                                    <th scope="col">Wert</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>Bildbeschreibung</td>
+                                    <td><span id="descriptionMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Orientierung</td>
+                                    <td><span id="orientationMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Software</td>
+                                    <td><span id="softwareMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Komprimierung</td>
+                                    <td><span id="compressionMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Erstellungsdatum</td>
+                                    <td><span id="dateMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Breite</td>
+                                    <td><span id="imageWidthMain"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Höhe</td>
+                                    <td><span id="imageHeightMain"></span></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/imagesloaded.js"></script>
+<script src="js/skrollr.js"></script>
+<script src="js/_main.js"></script>
+<script type="text/javascript" src="js/exif.js"></script>
+<!-- Bootstrap -->
+<script src="https://unpkg.com/tooltip.js@1.1.6/dist/umd/tooltip.js"></script>
+<script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script src="js/bootstrap.js"></script>
 
 
-		<!-- Bootstrap -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="css/bootstrap.css">
-		<script src="js/bootstrap.js"></script>
-
-	</head>
-    <body class="loading">
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-       	
-       	<div id="preload">
-	       	<img src="img/bcg_slide-1.jpg">
-	       	<img src="img/bcg_slide-2.jpg">
-	       	<img src="img/bcg_slide-3.jpg">
-	       	<img src="img/bcg_slide-4.jpg">
-       	</div>
-       	
-       	<main>
-			<!-- Navigation -->
-			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-				<a class="navbar-brand" href="#">
-					<img src="img/swissPhotoBrand" width="30" height="30" class="d-inline-block align-top" alt="">
-					Swissphoto
-				</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link" href="settingsViewer.html">Settingsviewer</a>
-						</li>
-						<li class="nav-item active">
-							<a class="nav-link" href="doc.html">Documentation</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-
-			<div class="row">
-				<div class="col">
-
-			<section id="welcomeSlide" class="homeSlide">
-				<div class="bcg"
-					 data-center="background-position: 50% 0px;"
-					 data-top-bottom="background-position: 50% -1200px;"
-					 data-anchor-target="#welcomeSlide">
-				</div>
-			</section>
-
-	        <section id="slide-1" class="homeSlide">
-	        	<div class="bcg" 
-	        		data-center="background-position: 50% 0px;" 
-	        		data-top-bottom="background-position: 50% -100px;" 
-	        		data-anchor-target="#slide-1">
-		        	<div class="hsContainer">
-			    		<div class="hsContent" data-center="bottom: 200px; opacity: 1" data-top="bottom: 1200px; opacity: 0" data-anchor-target="#slide-1 h2">
-				    		<h2 style="text-align: center">"The earth has music
-								for those whose listen"
-							</h2>
-			    		</div>
-		        	</div>
-	        	</div>
-		    </section>
-		    
-			<section id="slide-2" class="homeSlide">
-				<div class="bcg" 
-					data-center="background-position: 50% 10px;" 
-					data-top-bottom="background-position: 50% -100px;" 
-					data-bottom-top="background-position: 50% 100px;" 
-					data-anchor-target="#slide-2"
-				>
-			    	<div class="hsContainer">
-			    		<div class="hsContent" 
-			    			data-center="opacity: 1" 
-			    			data-center-top="opacity: 0" 
-			    			data--100-bottom="opacity: 0;" 
-			    			data-anchor-target="#slide-2"
-			    		>
-							<h2 style="text-align: center">"Education is not the filling of a pail,
-								but the lighting of a fire"
-							</h2>
-			    		</div>
-			    	</div>
-				</div>
-			</section>
-		    
-			<section id="slide-3" class="homeSlide">
-				<div class="bcg" 
-					data-center="background-position: 50% 0px;" 
-					data-top-bottom="background-position: 50% -100px;" 
-					data-bottom-top="background-position: 50% 100px;" 
-					data-anchor-target="#slide-3"
-				>
-			    	<div class="hsContainer">
-						<div class="hsContent" 
-							data--50-bottom="opacity: 0;" 
-							data--200-bottom="opacity: 1;" 
-							data-center="opacity: 1" 
-							data-200-top="opacity: 0" 
-							data-anchor-target="#slide-3 h2"
-						>
-							<h2 style="text-align: center">"Lightning makes no
-								sound until it strikes"
-							</h2>
-			    		</div>
-			    	</div>
-			    	
-			    </div>
-			</section>
-			
-			<section id="slide-4" class="homeSlide">
-				<div class="bcg" 
-					data-center="background-position: 50% 0px;" 
-					data-top-bottom="background-position: 50% -100px;" 
-					data-bottom-top="background-position: 50% 100px;" 
-					data-anchor-target="#slide-4"
-				>
-			    	<div class="hsContainer">
-						<div class="hsContent" 
-							data-bottom-top="opacity: 0" 
-							data-25p-top="opacity: 0" 
-							data-top="opacity: 1"  
-							data-anchor-target="#slide-4"
-						>
-							<h2 style="text-align: center">
-								"You will always find an answer
-								in the sound of water"
-							</h2>
-			    		</div>
-			    	</div>
-			    	
-			    </div>
-			</section>
-				</div>
-			</div>
-		</main>
-
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-        <script src="js/imagesloaded.js"></script>
-        <script src="js/skrollr.js"></script>
-        <script src="js/_main.js"></script>
-
-    </body>
+</body>
 </html>

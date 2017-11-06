@@ -149,14 +149,16 @@ main {
     top: auto;
 }
 /* Slide 1 */
-#slide-1 .bcg {background-image:url('../img/forest.png')}
+/*#slide-1 .bcg {background-image:url('../img/forest.png')}*/
+#slide-1 .bcg {background-image:url('../img/forest.jpg')}
 #slide-1 .hsContent {
 	bottom: 200px;
 	top: auto;
 }
 
 /* Slide 2 */
-#slide-2 .bcg {background-image:url('../img/fire.png')}
+/*#slide-2 .bcg {background-image:url('../img/fire.png')}*/
+#slide-2 .bcg {background-image:url('../img/bach.jpg')}
 #slide-2 .hsContent {
 	margin-left: -450px;
 	top: auto;
@@ -167,7 +169,8 @@ main {
 }
 
 /* Slide 3 */
-#slide-3 .bcg {background-image:url('../img/strike.png')}
+/*#slide-3 .bcg {background-image:url('../img/strike.png')}*/
+#slide-3 .bcg {background-image:url('../img/bach2.jpg')}
 #slide-3 .hsContent {
 	margin-left: -239px;
 }
@@ -177,7 +180,8 @@ main {
 	}
 
 /* Slide 4 */
-#slide-4 .bcg {background-image:url('../img/creek.png')}
+/*#slide-4 .bcg {background-image:url('../img/creek.png')}*/
+#slide-4 .bcg {background-image:url('../img/blattForest.jpg')}
 #slide-4 .hsContent {
 	margin-left: -450px;
 	position: fixed;
