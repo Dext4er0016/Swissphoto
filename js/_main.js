@@ -7,10 +7,10 @@
 		setTimeout(function() {
 		      adjustWindow();
 			  $body.removeClass('loading').addClass('loaded');
-			  
+
 		}, 800);
 	});
-	
+
 	function adjustWindow(){
 		var s = skrollr.init({
 		    forceHeight: false
@@ -18,7 +18,7 @@
 	    winH = $window.height();
 	    if(winH <= 550) {
 			winH = 550;
-		} 
+		}
 	    $slide.height(winH);
 	    s.refresh($('.homeSlide'));
 	}
@@ -184,4 +184,121 @@ function showExifHome(divId, imageId){
     imageWidthElement.innerHTML = exifMap.get("ImageWidth");
     imageHeightElement.innerHTML = exifMap.get("ImageHeight");
     compressionElement.innerHTML = exifMap.get("Compression");
+}
+
+$(document).ready(function() {
+    var inner = $(".inner");
+    var elementPosTop = inner.position().top;
+    console.log("Inner: " + inner);
+    var viewportHeight = $(window).height();
+    $(window).on('scroll', function() {
+        var scrollPos = $(window).scrollTop();
+        var elementFromTop = elementPosTop - scrollPos;
+
+        if (elementFromTop > 0 && elementFromTop < elementPosTop + viewportHeight) {
+            inner.addClass("active");
+        } else {
+            inner.removeClass("active");
+        }
+    });
+})
+
+var volume = 0.7;
+var counter = 0;
+var audioForest = new Audio('sounds/forest.mp3');
+var audioFire = new Audio('sounds/feuer.m4a');
+var audioThunder = new Audio('sounds/thunder.mp3');
+var audioBach = new Audio('sounds/bach.mp3');
+
+audioForest.volume = volume;
+audioFire.volume = volume;
+audioThunder.volume = volume;
+audioBach.volume = volume;
+
+$(window).scroll(function() {
+    var scrollPos = $(this).scrollTop();
+    var firstTop = $('.slide1').offset().top;
+    var secondTop = $('.slide2').offset().top;
+    var thirdTop = $('.slide3').offset().top;
+    var fourthTop = $('.slide4').offset().top;
+
+
+    console.log("scrollPos: " + scrollPos);
+    console.log("offsetTop: " + firstTop);
+
+    //First Element
+    if(scrollPos > firstTop && scrollPos < secondTop){
+        if(counter == 0){
+            audioForest.play();
+            counter++;
+            console.log("Counter: " + counter);
+        }
+        console.log("First");
+    }
+    else{
+        console.log("AudioForest pause");
+        audioForest.pause();
+        counter = 0;
+    }
+
+    //Second Element
+    if(scrollPos > secondTop && scrollPos < thirdTop){
+        if(counter == 0){
+            audioFire.play();
+            counter++;
+            console.log("Counter: " + counter);
+        }
+        console.log("Third");
+    }
+    else{
+        console.log("CreekForest pause");
+        audioFire.pause();
+        counter = 0;
+    }
+
+    //Third Element
+    if(scrollPos > thirdTop && scrollPos < fourthTop){
+        if(counter == 0){
+            audioThunder.play();
+            counter++;
+            console.log("Counter: " + counter);
+        }
+        console.log("Third");
+    }
+    else{
+        console.log("CreekForest pause");
+        audioThunder.pause();
+        counter = 0;
+    }
+
+    //Third Element
+    if(scrollPos > fourthTop){
+        if(counter == 0){
+            audioBach.play();
+            counter++;
+            console.log("Counter: " + counter);
+        }
+        console.log("Third");
+    }
+    else{
+        console.log("CreekForest pause");
+        audioBach.pause();
+        counter = 0;
+    }
+
+});
+
+
+var playHobbitSoundClicked = 0;
+var audioHobbit = new Audio('sounds/hobbit.mp3');
+function playHobbitSound() {
+    if(playHobbitSoundClicked == 0){
+        audioHobbit.play()
+        playHobbitSoundClicked = 1;
+    }
+    else{
+        audioHobbit.pause()
+        playHobbitSoundClicked = 0;
+    }
+
 }

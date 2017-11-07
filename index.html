@@ -68,19 +68,32 @@
     <div class="row">
         <div class="col">
             <img id="hiddenImage" src="" style="display: none;"/>
-            <section id="welcomeSlide" class="homeSlide">
+            <section id="welcomeSlide" class="homeSlide welcomeSlide">
                 <div class="bcg"
                      data-center="background-position: 50% 0px;"
-                     data-top-bottom="background-position: 50% -1200px;"
+                     data-top-bottom="background-position: 50% -10px;"
                      data-anchor-target="#welcomeSlide">
+                    <div class="hsContainer">
+                        <div class="hsContent landing"
+                             data-center="opacity: 1"
+                             data-10-top="opacity: 0"
+                             data-anchor-target="#welcomeSlide h2"
+                        >
+                            <h2 style="text-align: center" id="titleHeader">Just <br> listen
+                            </h2>
+                            <button class="button startHobbitButton" onclick="playHobbitSound()">Play backround music</button>
+
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <section id="slide-1" class="homeSlide">
+            <section id="slide-1" class="homeSlide slide1">
                 <div class="bcg"
                      data-center="background-position: 50% 0px;"
                      data-top-bottom="background-position: 50% -100px;"
-                     data-anchor-target="#slide-1">
+                     data-anchor-target="#slide-1"
+                     id="testScroll">
                     <div class="hsContainer">
                         <div class="hsContent" data-center="bottom: 200px; opacity: 1"
                              data-top="bottom: 1200px; opacity: 0" data-anchor-target="#slide-1 h2">
@@ -92,7 +105,7 @@
                 </div>
             </section>
 
-            <section id="slide-2" class="homeSlide">
+            <section id="slide-2" class="homeSlide slide2">
                 <div class="bcg"
                      data-center="background-position: 50% 10px;"
                      data-top-bottom="background-position: 50% -100px;"
@@ -114,7 +127,7 @@
                 </div>
             </section>
 
-            <section id="slide-3" class="homeSlide">
+            <section id="slide-3" class="homeSlide slide3">
                 <div class="bcg"
                      data-center="background-position: 50% 0px;"
                      data-top-bottom="background-position: 50% -100px;"
@@ -138,7 +151,7 @@
                 </div>
             </section>
 
-            <section id="slide-4" class="homeSlide">
+            <section id="slide-4" class="homeSlide slide4">
                 <div class="bcg"
                      id="slide4Div"
                      data-center="background-position: 50% 0px;"

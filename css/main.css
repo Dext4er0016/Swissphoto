@@ -142,11 +142,27 @@ main {
 		color: #b2b2b2;
 		text-decoration: underline;
 	}
+    .hsContent.landing{
+        position: absolute;
+        margin: -100px 0 0 -150px;
+        background: red;
+        left: 50%;
+        width:30em;
+        height:13em;
+        margin-top: -12em; /*set to a negative number 1/2 of your height*/
+        margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    }
+h2#titleHeader {
+    font-size: 200px;
+    line-height: 185px;
+}
 /*Welcome Slide */
-#welcomeSlide .bcg {background-image:url('../img/welcome.png')}
+/*
+#welcomeSlide .bcg {background-image:url('../img/welcome.png')}*/
+#welcomeSlide .bcg {background-color: black}
 #welcomeSlide .hsContent {
     bottom: 200px;
-    top: auto;
+    top: 50%;
 }
 /* Slide 1 */
 /*#slide-1 .bcg {background-image:url('../img/forest.png')}*/
@@ -157,8 +173,8 @@ main {
 }
 
 /* Slide 2 */
-/*#slide-2 .bcg {background-image:url('../img/fire.png')}*/
-#slide-2 .bcg {background-image:url('../img/bach.jpg')}
+#slide-2 .bcg {background-image:url('../img/fire.jpg')}
+/*#slide-2 .bcg {background-image:url('../img/bach.jpg')}*/
 #slide-2 .hsContent {
 	margin-left: -450px;
 	top: auto;
@@ -169,8 +185,8 @@ main {
 }
 
 /* Slide 3 */
-/*#slide-3 .bcg {background-image:url('../img/strike.png')}*/
-#slide-3 .bcg {background-image:url('../img/bach2.jpg')}
+#slide-3 .bcg {background-image:url('../img/rain.jpg')}
+/*#slide-3 .bcg {background-image:url('../img/bach2.jpg')}*/
 #slide-3 .hsContent {
 	margin-left: -239px;
 }
@@ -180,8 +196,8 @@ main {
 	}
 
 /* Slide 4 */
-/*#slide-4 .bcg {background-image:url('../img/creek.png')}*/
-#slide-4 .bcg {background-image:url('../img/blattForest.jpg')}
+#slide-4 .bcg {background-image:url('../img/bach.jpg')}
+/*#slide-4 .bcg {background-image:url('../img/blattForest.jpg')}*/
 #slide-4 .hsContent {
 	margin-left: -450px;
 	position: fixed;
@@ -422,4 +438,19 @@ table {
     display: inline-block;
     vertical-align: middle;
     line-height: normal;
+}
+
+.startHobbitButton {
+    width: 480px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.startHobbitButton:hover {
+    background-color: white;
+    color: black;
 }
