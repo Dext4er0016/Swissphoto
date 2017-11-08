@@ -25,13 +25,20 @@
 } )( jQuery );
 
 
+$(window).ready(function() {
+    sessionStorage.SessionName = "SessionData";
+    var firstCall = sessionStorage.getItem("firstCall");
+    console.log(firstCall);
+    if(firstCall != "isFirstCall"){
+        $('#myModal').modal('show');
+        sessionStorage.setItem("firstCall","isFirstCall");
+    }
+});
+
 function getExif(imageId) {
-    alert("GetExif ImageId " + imageId);
     var img1 = document.getElementById(imageId);
     var myMap = new Map();
-    alert("Actual ImageID: " + img1.id);
     EXIF.getData(img1, function() {
-        alert("Inside of Method");
         var make = EXIF.getTag(this, "Make");
         var model = EXIF.getTag(this, "Model");
         var exposure = EXIF.getTag(this, "ExposureTime");
@@ -142,19 +149,18 @@ function handleImage(e) {
     reader.readAsDataURL(e.target.files[0]);
 }
 
-function showExifHome(divId, imageId){
-    alert(divId);
+function showExifHome(divId){
     var bgDiv = $("#slide4Div").css("background-image");
-    res = bgDiv.substring(4, bgDiv.length -1);
-    $("#hiddenImage").attr("src",res);
-    //var output = document.getElementById('hiddenImage');
-    //output.src = res;
+    res = divId.substring(5, divId.length);
 
-    alert("Image: " + bgDiv);
-    alert("Result: " + res);
-    alert("Attribute: " + $("#hiddenImage").attr("src"));
+    var cameraSettings = '{ "settings" : [' +
+        '{"make":"Nikon", "model":"EOS 70d", "exposure":"0.5s", "fNumber":"22", "isoSpeed":"1600", "flash":"Did not fire", "description":"Herbsfotografie im Wald", "orientation":"landscape", "software":"Lightroom", "date":"05.11.2017", "imageWidth":"5472 px", "imageHeight":"3648 px", "compression":"-" },' +
+        '{"make":"Nikon", "model":"EOS 70d", "exposure":"1/25s", "fNumber":"5.6", "isoSpeed":"1600", "flash":"Did not fire", "description":"Kaminfeuer", "orientation":"landscape", "software":"Lightroom", "date":"05.11.2017", "imageWidth":"5472 px", "imageHeight":"3648 px", "compression":"-" },' +
+        '{"make":"Nikon", "model":"EOS 70d", "exposure":"1/8.0s", "fNumber":"5.6", "isoSpeed":"1600", "flash":"Did not fire", "description":"Regentropfen auf Fensterscheibe", "orientation":"landscape", "software":"Lightroom", "date":"05.11.2017", "imageWidth":"5472 px", "imageHeight":"3648 px", "compression":"-" },' +
+        '{"make":"Nikon", "model":"EOS 70d", "exposure":"30.0s", "fNumber":"13", "isoSpeed":"1600", "flash":"Did not fire", "description":"Bach im Wald", "orientation":"landscape", "software":"Lightroom", "date":"05.11.2017", "imageWidth":"5472 px", "imageHeight":"3648 px", "compression":"-" } ]}';
 
-    var exifMap = getExif("hiddenImage");
+    var obj = JSON.parse(cameraSettings);
+
     var makeElement = document.getElementById("makeMain");
     var modelElement = document.getElementById("modelMain");
     var exposureElement = document.getElementById("exposureMain");
@@ -169,21 +175,23 @@ function showExifHome(divId, imageId){
     var imageHeightElement = document.getElementById("imageHeightMain");
     var compressionElement = document.getElementById("compressionMain");
 
-    alert(exifMap.get("Make"));
+    makeElement.innerHTML = obj.settings[res-1].make;
+    modelElement.innerHTML = obj.settings[res-1].model;
+    exposureElement.innerHTML = obj.settings[res-1].exposure;
+    fNumberElement.innerHTML = obj.settings[res-1].fNumber;
+    isoSpeedElement.innerHTML = obj.settings[res-1].isoSpeed;
+    flashElement.innerHTML = obj.settings[res-1].flash;
+    descriptionElement.innerHTML = obj.settings[res-1].description;
+    orientationElement.innerHTML = obj.settings[res-1].orientation;
+    softwareElement.innerHTML = obj.settings[res-1].software;
+    dateElement.innerHTML = obj.settings[res-1].date;
+    imageWidthElement.innerHTML = obj.settings[res-1].imageWidth;
+    imageHeightElement.innerHTML = obj.settings[res-1].imageHeight;
+    compressionElement.innerHTML = obj.settings[res-1].compression;
 
-    makeElement.innerHTML = exifMap.get("Make");
-    modelElement.innerHTML = exifMap.get("Model");
-    exposureElement.innerHTML = exifMap.get("ExposureTime");
-    fNumberElement.innerHTML = exifMap.get("FNumber");
-    isoSpeedElement.innerHTML = exifMap.get("ISOSpeedRatings");
-    flashElement.innerHTML = exifMap.get("Flash");
-    descriptionElement.innerHTML = exifMap.get("ImageDescription");;
-    orientationElement.innerHTML = exifMap.get("Orientation");
-    softwareElement.innerHTML = exifMap.get("Software");
-    dateElement.innerHTML = exifMap.get("DateTimeOriginal");
-    imageWidthElement.innerHTML = exifMap.get("ImageWidth");
-    imageHeightElement.innerHTML = exifMap.get("ImageHeight");
-    compressionElement.innerHTML = exifMap.get("Compression");
+    $('#exifModal').modal('show');
+
+
 }
 
 $(document).ready(function() {
@@ -206,12 +214,11 @@ $(document).ready(function() {
 var volume = 0.7;
 var counter = 0;
 var audioForest = new Audio('sounds/forest.mp3');
-var audioFire = new Audio('sounds/feuer.m4a');
+var audioFire = new Audio('sounds/feuer.mp3');
 var audioThunder = new Audio('sounds/thunder.mp3');
 var audioBach = new Audio('sounds/bach.mp3');
 
 audioForest.volume = volume;
-audioFire.volume = volume;
 audioThunder.volume = volume;
 audioBach.volume = volume;
 
@@ -271,8 +278,8 @@ $(window).scroll(function() {
         counter = 0;
     }
 
-    //Third Element
-    if(scrollPos > fourthTop){
+    //Fourth Element
+    if(scrollPos + 10 > fourthTop){
         if(counter == 0){
             audioBach.play();
             counter++;
@@ -295,10 +302,19 @@ function playHobbitSound() {
     if(playHobbitSoundClicked == 0){
         audioHobbit.play()
         playHobbitSoundClicked = 1;
+        document.getElementById("playSoundButton").innerHTML = "Pause backround music";
     }
     else{
         audioHobbit.pause()
         playHobbitSoundClicked = 0;
+        document.getElementById("playSoundButton").innerHTML = "Play backround music";
+
     }
 
 }
+
+function printSite() {
+    window.print();
+}
+
+

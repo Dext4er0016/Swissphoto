@@ -59,7 +59,7 @@
                     <a class="nav-link" href="settingsViewer.html">Settingsviewer</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="doc.html">Documentation</a>
+                    <a class="nav-link" href="documentation.html">Documentation</a>
                 </li>
             </ul>
         </div>
@@ -81,7 +81,7 @@
                         >
                             <h2 style="text-align: center" id="titleHeader">Just <br> listen
                             </h2>
-                            <button class="button startHobbitButton" onclick="playHobbitSound()">Play backround music</button>
+                            <button id="playSoundButton" class="button startHobbitButton" onclick="playHobbitSound()">Play backround music</button>
 
                         </div>
                     </div>
@@ -93,7 +93,8 @@
                      data-center="background-position: 50% 0px;"
                      data-top-bottom="background-position: 50% -100px;"
                      data-anchor-target="#slide-1"
-                     id="testScroll">
+                     id="slide1"
+                     onclick="showExifHome(this.id)">
                     <div class="hsContainer">
                         <div class="hsContent" data-center="bottom: 200px; opacity: 1"
                              data-top="bottom: 1200px; opacity: 0" data-anchor-target="#slide-1 h2">
@@ -107,10 +108,12 @@
 
             <section id="slide-2" class="homeSlide slide2">
                 <div class="bcg"
+                     id="slide2"
                      data-center="background-position: 50% 10px;"
                      data-top-bottom="background-position: 50% -100px;"
                      data-bottom-top="background-position: 50% 100px;"
                      data-anchor-target="#slide-2"
+                     onclick="showExifHome(this.id)"
                 >
                     <div class="hsContainer">
                         <div class="hsContent"
@@ -122,6 +125,7 @@
                             <h2 style="text-align: center">"Education is not the filling of a pail,
                                 but the lighting of a fire"
                             </h2>
+
                         </div>
                     </div>
                 </div>
@@ -129,10 +133,12 @@
 
             <section id="slide-3" class="homeSlide slide3">
                 <div class="bcg"
+                     id="slide3"
                      data-center="background-position: 50% 0px;"
                      data-top-bottom="background-position: 50% -100px;"
                      data-bottom-top="background-position: 50% 100px;"
                      data-anchor-target="#slide-3"
+                     onclick="showExifHome(this.id)"
                 >
                     <div class="hsContainer">
                         <div class="hsContent"
@@ -153,12 +159,12 @@
 
             <section id="slide-4" class="homeSlide slide4">
                 <div class="bcg"
-                     id="slide4Div"
+                     id="slide4"
                      data-center="background-position: 50% 0px;"
                      data-top-bottom="background-position: 50% -100px;"
                      data-bottom-top="background-position: 50% 100px;"
                      data-anchor-target="#slide-4"
-                     onclick="showExifHome(this.id, 'hiddenImage')"
+                     onclick="showExifHome(this.id)"
                 >
                     <div class="hsContainer">
                         <div class="hsContent"
@@ -178,13 +184,11 @@
         </div>
     </div>
     <!-- Large modal -->
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">Large modal</button>
-
-    <div class="modal bd-example-modal-lg" tabindex="-1" role="dialog">
+    <div id="exifModal" class="modal bd-example-modal-lg" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
+                    <h5 class="modal-title">Foto Informationen</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -276,8 +280,25 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- Modal -->
+    <div id="myModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Swissphoto</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h1>Willkommen zu Swissphoto!</h1>
+                    <p>Auf dieser Seite finden Sie die atemberaubende Schönheit der Natur. <br>
+                    Klicken Sie auf eines der Bilder um eine genauere Beschreibung der einzelnen Bilder angezeigt zu bekommen.</p>
                 </div>
             </div>
         </div>
@@ -291,6 +312,7 @@
 <!-- Bootstrap -->
 <script src="https://unpkg.com/tooltip.js@1.1.6/dist/umd/tooltip.js"></script>
 <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.css">
 <script src="js/bootstrap.js"></script>
 
