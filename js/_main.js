@@ -1,4 +1,5 @@
 
+//Prepare for Parralax
 ( function( $ ) {
 	$window = $(window);
 	$slide = $('.homeSlide');
@@ -25,16 +26,17 @@
 } )( jQuery );
 
 
+//Safe Data in sessionStorage to check whether it's the first call of this user
 $(window).ready(function() {
     sessionStorage.SessionName = "SessionData";
     var firstCall = sessionStorage.getItem("firstCall");
-    console.log(firstCall);
     if(firstCall != "isFirstCall"){
         $('#myModal').modal('show');
         sessionStorage.setItem("firstCall","isFirstCall");
     }
 });
 
+//Returns the exif data of the image id as a map
 function getExif(imageId) {
     var img1 = document.getElementById(imageId);
     var myMap = new Map();
@@ -75,6 +77,7 @@ function getExif(imageId) {
     return myMap;
 }
 
+//Shows the EXIF data for the SettingsViewer
 function showExifUpload(imageId){
     var exifMap = getExif(imageId);
     var makeElement = document.getElementById("make");
@@ -112,7 +115,7 @@ function showExifUpload(imageId){
 
 }
 
-
+//Uploads the Pics for the EXIF
 function uploadPicForExif(){
     $('#upload').click();
 }
@@ -149,6 +152,7 @@ function handleImage(e) {
     reader.readAsDataURL(e.target.files[0]);
 }
 
+//Shows the EXIF data for the Home pics
 function showExifHome(divId){
     var bgDiv = $("#slide4Div").css("background-image");
     res = divId.substring(5, divId.length);
@@ -207,6 +211,7 @@ audioForest.volume = volume;
 audioThunder.volume = volume;
 audioBach.volume = volume;
 
+//Plays the music for the accordingly Image
 $(window).scroll(function() {
     var scrollPos = $(this).scrollTop();
     var firstTop = $('.slide1').offset().top;
@@ -215,20 +220,14 @@ $(window).scroll(function() {
     var fourthTop = $('.slide4').offset().top;
 
 
-    console.log("scrollPos: " + scrollPos);
-    console.log("offsetTop: " + firstTop);
-
     //First Element
     if(scrollPos > firstTop && scrollPos < secondTop){
         if(counter == 0){
             audioForest.play();
             counter++;
-            console.log("Counter: " + counter);
         }
-        console.log("First");
     }
     else{
-        console.log("AudioForest pause");
         audioForest.pause();
         counter = 0;
     }
@@ -238,12 +237,9 @@ $(window).scroll(function() {
         if(counter == 0){
             audioFire.play();
             counter++;
-            console.log("Counter: " + counter);
         }
-        console.log("Third");
     }
     else{
-        console.log("CreekForest pause");
         audioFire.pause();
         counter = 0;
     }
@@ -253,12 +249,9 @@ $(window).scroll(function() {
         if(counter == 0){
             audioThunder.play();
             counter++;
-            console.log("Counter: " + counter);
         }
-        console.log("Third");
     }
     else{
-        console.log("CreekForest pause");
         audioThunder.pause();
         counter = 0;
     }
@@ -268,12 +261,9 @@ $(window).scroll(function() {
         if(counter == 0){
             audioBach.play();
             counter++;
-            console.log("Counter: " + counter);
         }
-        console.log("Third");
     }
     else{
-        console.log("CreekForest pause");
         audioBach.pause();
         counter = 0;
     }
@@ -283,6 +273,7 @@ $(window).scroll(function() {
 
 var playHobbitSoundClicked = 0;
 var audioHobbit = new Audio('sounds/hobbit.mp3');
+//Plays the Orchester
 function playHobbitSound() {
     if(playHobbitSoundClicked == 0){
         audioHobbit.play()
@@ -297,9 +288,4 @@ function playHobbitSound() {
     }
 
 }
-
-function printSite() {
-    window.print();
-}
-
 
