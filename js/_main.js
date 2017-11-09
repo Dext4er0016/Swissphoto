@@ -194,22 +194,7 @@ function showExifHome(divId){
 
 }
 
-$(document).ready(function() {
-    var inner = $(".inner");
-    var elementPosTop = inner.position().top;
-    console.log("Inner: " + inner);
-    var viewportHeight = $(window).height();
-    $(window).on('scroll', function() {
-        var scrollPos = $(window).scrollTop();
-        var elementFromTop = elementPosTop - scrollPos;
 
-        if (elementFromTop > 0 && elementFromTop < elementPosTop + viewportHeight) {
-            inner.addClass("active");
-        } else {
-            inner.removeClass("active");
-        }
-    });
-})
 
 var volume = 0.7;
 var counter = 0;

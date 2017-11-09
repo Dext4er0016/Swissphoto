@@ -119,6 +119,9 @@ main {
 	overflow: hidden;
 	position: relative;
 }
+.hsContainer.ImgContent{
+    cursor: pointer;
+}
 
 .hsContent {
 	max-width: 700px;
@@ -147,7 +150,7 @@ main {
     .hsContent.landing{
         position: absolute;
         margin: -100px 0 0 -150px;
-        background: red;
+        background: #c61310;
         left: 50%;
         width:30em;
         height:13em;
@@ -320,8 +323,23 @@ table {
     color: black;
 }
 
-.details{
+.details {
     font-size: 24px;
     color: white;
     margin-top: 20px;
+}
+
+#tutorialImg {
+    display: block;
+}
+
+footer{
+    background: rgb(53,58,64);
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+footer p{
+    margin: 0px;
+    margin-left: 20px;
 }
