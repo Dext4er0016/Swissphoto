@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3e645cb4-db70-4acd-ae21-33cd3cc287e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TagesjournalWeb.fld/props002.xml" afterPath="$PROJECT_DIR$/TagesjournalWeb.fld/props002.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TagesjournalWeb.html" afterPath="$PROJECT_DIR$/TagesjournalWeb.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/_main.js" afterPath="$PROJECT_DIR$/js/_main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/settingsViewer.html" afterPath="$PROJECT_DIR$/settingsViewer.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/sounds/feuer.m4a" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -3131,12 +3126,12 @@
       <workItem from="1509347592704" duration="3487000" />
       <workItem from="1509368276657" duration="2059000" />
       <workItem from="1509625353949" duration="7978000" />
-      <workItem from="1509777660692" duration="28341000" />
+      <workItem from="1509777660692" duration="28452000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77709000" />
+    <option name="totallyTimeSpent" value="77820000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
